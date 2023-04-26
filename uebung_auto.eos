@@ -1,0 +1,110 @@
+// EOS 1.5 - Programm
+
+
+f:FENSTER
+f.höheSetzen(700)
+f.breiteSetzen(800)
+//f.gitteraus()
+f.hintergrundfarbeSetzen(gruen)
+f.strichabstandSetzen(100)
+
+auto:GRUPPE
+
+licht1:KREIS
+licht1.verschieben(-60,15)
+licht1.füllfarbeSetzen(gelb)
+auto.schlucke(licht1)
+
+licht2:KREIS
+licht2.verschieben(120,10)
+licht2.füllfarbeSetzen(rot)
+auto.schlucke(licht2)
+
+
+// unten
+r1:RECHTECK
+r1.füllfarbeSetzen(blau)
+r1.höheSetzen(40)
+r1.breiteSetzen(180)
+r1.verschiebenNach(-60,30)
+r1.randfarbeSetzen(blau)
+auto.schlucke(r1)
+
+// oben
+r2:RECHTECK
+r2.füllfarbeSetzen(blau)
+r2.breiteSetzen(130)
+r2.höheSetzen(30)
+r2.verschieben(0,50)
+r2.randfarbeSetzen(blau)
+auto.schlucke(r2)
+
+// fenster vorne
+f1:RECHTECK
+f1.füllfarbeSetzen(hellblau)
+f1.breiteSetzen(40)
+f1.verschiebenNach(10,50)
+auto.schlucke(f1)
+
+// fenster hinten
+f2:RECHTECK
+f2.füllfarbeSetzen(hellblau)
+f2.breiteSetzen(40)
+f2.verschiebenNach(70,50)
+auto.schlucke(f2)
+
+
+
+
+rad1:KREIS
+rad1.radiusSetzen(20)
+rad1.randstärkeSetzen(10)
+rad1.füllfarbeSetzen(hellgrau)
+rad1.verschieben(-20,-10)
+auto.schlucke(rad1)
+
+rad2:KREIS
+rad2.radiusSetzen(20)
+rad2.randstärkeSetzen(10)
+rad2.füllfarbeSetzen(hellgrau)
+rad2.verschieben(90,-10)
+auto.schlucke(rad2)
+
+
+strasse:DREIECK
+strasse.füllfarbeSetzen(grau)
+strasse.randfarbeSetzen(grau)
+strasse.eckenSetzen(-400-80,400+100,400+150,-400,400,-400-150)
+f.zeichne(strasse)
+f.zeichne(auto)
+
+
+// bewegung
+auto.verschiebenNach(400,-400)
+auto.drehen(-45)
+wiederhole immer
+   
+   wiederhole 800 mal
+      wiederhole 2 mal
+         auto.verschieben(0,0)
+      *wiederhole
+      auto.verschieben(-1,1)
+      auto.strecken(1.0/1.001)
+   *wiederhole
+   auto.spiegleX()
+   auto.drehen(-90)
+   wiederhole 800 mal
+      wiederhole 2 mal
+         auto.verschieben(0,0)
+      *wiederhole
+      auto.verschieben(1,-1)
+      auto.strecken(1.001)
+   *wiederhole
+   auto.spiegleX()
+   auto.drehen(-90)
+*wiederhole
+
+
+
+
+
