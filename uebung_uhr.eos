@@ -100,17 +100,36 @@ d1.eckenSetzen(10,150,0,160,-10,150)
 d1.füllfarbeSetzen(blau)
 zm.schlucke(d1)
 
-zs:GRUPPE
+zh:GRUPPE
 
 r13:RECHTECK
 r13.eckenSetzen(10,90,-10,10)
 r13.füllfarbeSetzen(blau)
-zs.schlucke(r13)
+zh.schlucke(r13)
 
 d2:DREIECK
 d2.eckenSetzen(10,90,0,100,-10,90)
 d2.füllfarbeSetzen(blau)
-zs.schlucke(d2)
+zh.schlucke(d2)
+
+zs:GRUPPE
+r14:RECHTECK
+r14.eckenSetzen(5,180,-5,0)
+r14.füllfarbeSetzen(blau)
+zs.schlucke(r14)
+
+d3:DREIECK
+d3.eckenSetzen(5,180,0,200,-5,180)
+d3.füllfarbeSetzen(blau)
+zs.schlucke(d3)
+
+wiederhole immer
+   zm.drehenUm(0,0,-360.0/60.0/60.0)
+   zh.drehenUm(0,0,-360.0/60.0/60.0/12.0)
+   zs.drehenUm(0,0,-360/60)
+   
+*wiederhole
+
 
 
 
